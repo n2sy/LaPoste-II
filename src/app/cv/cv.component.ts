@@ -8,7 +8,7 @@ import { Candidat } from '../models/candidat';
 })
 export class CvComponent implements OnInit {
   tabCandidats = [
-    new Candidat(1, 'Nidhal', 'Jelassi', 38, 'Enseignant', 'nidhal.jpg'),
+    new Candidat(1, 'Mohamed', 'Jelassi', 38, 'Enseignant', 'nidhal.jpg'),
     new Candidat(2, 'Bart', 'Simpson', 18, 'Eleve', 'bart.jpeg'),
     new Candidat(3, 'Homer', 'Simpson', 52, 'Directeur', 'homer.jpg'),
   ];
