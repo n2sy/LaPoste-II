@@ -1,0 +1,10 @@
+<p>Je suis le componsant First</p>
+<h3>Bienvenue chez {{ name }} {{ adresse }}</h3>
+
+<input type="text" [(ngModel)]="name">
+
+<div [hidden]="hd" [style.backgroundColor]="'grey'">Je m'appelle Nidhal</div>
+
+<button class="btn btn-danger" (click)="showAlert()">Click me</button>
+
+<app-child (msgToFirst)="traitementDuParent($event)" [cl]="color"></app-child>
