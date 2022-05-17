@@ -1,0 +1,19 @@
+<div [ngStyle]="{
+    'backgroundColor': bg ,
+    'color' : cl,
+    'fontSize' : fSize,
+    'fontFamily' : fFamily 
+}">La Poste Tunisienne</div>
+
+Background Color : <br>
+<input type="text" class="form-control" [(ngModel)]="bg">
+Text Color : <br>
+<input type="text" class="form-control" [(ngModel)]="cl">
+Font Size : <br>
+<input #inp type="number" class="form-control" (change)="changeSize(inp.value)">
+
+
+Font Family : <br>
+<select name="" id="" class="form-control" [(ngModel)]="fFamily">
+    <option *ngFor="let f of listPolices" [value]="f"> {{ f }} </option>
+</select>
