@@ -1,5 +1,5 @@
 <ol>
-    <app-item (sendCandToList)="traitementDeList($event)" [oneCandidat]="listCandidats[0]"></app-item>
-    <app-item (sendCandToList)="traitementDeList($event)" [oneCandidat]="listCandidats[1]"></app-item>
-    <app-item (sendCandToList)="traitementDeList($event)" [oneCandidat]="listCandidats[2]"></app-item>
+    <app-item *ngFor="let c of listCandidats" (sendCandToList)="traitementDeList($event)" [oneCandidat]="c"></app-item>
+    <!-- <app-item (sendCandToList)="traitementDeList($event)" [oneCandidat]="listCandidats[1]"></app-item>
+    <app-item (sendCandToList)="traitementDeList($event)" [oneCandidat]="listCandidats[2]"></app-item> -->
 </ol>
