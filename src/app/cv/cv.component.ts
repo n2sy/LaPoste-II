@@ -12,7 +12,12 @@ export class CvComponent implements OnInit {
     new Candidat(2, 'Bart', 'Simpson', 18, 'Eleve', 'bart.jpeg'),
     new Candidat(3, 'Homer', 'Simpson', 52, 'Directeur', 'homer.jpg'),
   ];
+  selectedCandidat: Candidat;
   constructor() {}
 
   ngOnInit(): void {}
+
+  traitementDuCv(cand) {
+    this.selectedCandidat = cand;
+  }
 }

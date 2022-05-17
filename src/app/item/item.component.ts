@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Candidat } from '../models/candidat';
 
 @Component({
@@ -8,7 +8,12 @@ import { Candidat } from '../models/candidat';
 })
 export class ItemComponent implements OnInit {
   @Input() oneCandidat: Candidat;
+  @Output() sendCandToList = new EventEmitter<Candidat>();
   constructor() {}
 
   ngOnInit(): void {}
+
+  sendEvent() {
+    this.sendCandToList.emit(this.oneCandidat);
+  }
 }
