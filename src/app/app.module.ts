@@ -12,9 +12,10 @@ import { DetailsComponent } from './details/details.component';
 import { AddAccountComponent } from './accounts/add-account/add-account.component';
 import { ItemAccountComponent } from './accounts/item-account/item-account.component';
 import { HomeAccountComponent } from './accounts/home-account/home-account.component';
+import { DirectComponent } from './direct/direct.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, AddAccountComponent, ItemAccountComponent, HomeAccountComponent],
+  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, AddAccountComponent, ItemAccountComponent, HomeAccountComponent, DirectComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
