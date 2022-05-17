@@ -1,8 +1,8 @@
 <div class="container">
     <ol>
-        <li [ngClass]="affecterClasse(serv.statut)" class="list-group-item" *ngFor="let serv of tabServers">
-            {{ serv.name }} | {{ serv.type}} | {{ serv.date_d }}
-            <span class="badge bg-secondary">{{ serv.statut}}</span>
+        <li [ngClass]="affecterClasse(serv.statut)" class="list-group-item" *ngFor="let serv of tabServers | filter">
+            {{ serv.name | short:10}} | {{ serv.type}} | {{ serv.date_d | date:'fullDate' | uppercase }}
+            <span class="badge bg-secondary">{{ serv.statut }}</span>
         </li>
     </ol>
 </div>
