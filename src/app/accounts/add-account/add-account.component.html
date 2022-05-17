@@ -1,1 +1,11 @@
-<p>add-account works!</p>
+Nom du compte : <br>
+<input type="text" class="form-control" [(ngModel)]="nom">
+
+Statut :<br>
+<select name="" id="" class="form-control" [(ngModel)]="statut">
+    <option value="active">Active</option>
+    <option value="inactive">Inctive</option>
+    <option value="unknown">Unknown</option>
+</select>
+<br>
+<button (click)="addAccount()" class="btn btn-success">Add</button>
