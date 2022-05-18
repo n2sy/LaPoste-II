@@ -32,6 +32,7 @@ export class ManageServersComponent implements OnInit {
       statut: 'offline',
     },
   ];
+  selStatus = '';
   constructor() {}
 
   ngOnInit(): void {}
@@ -42,5 +43,14 @@ export class ManageServersComponent implements OnInit {
       'list-group-item-danger': st == 'critical' ? true : false,
       'list-group-item-warning': st == 'offline' ? true : false,
     };
+  }
+
+  addNewServer() {
+    this.tabServers.push({
+      name: 'NEW Server',
+      type: 'medium',
+      date_d: new Date(2020, 12, 13),
+      statut: 'offline',
+    });
   }
 }
