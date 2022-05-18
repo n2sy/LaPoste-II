@@ -18,10 +18,38 @@ import { ManageServersComponent } from './manage-servers/manage-servers.componen
 import { ShortPipe } from './short.pipe';
 import { FilterPipe } from './filter.pipe';
 import { RecruterComponent } from './recruter/recruter.component';
+import { HomeComponent } from './home/home.component';
+import { MY_ROUTING } from './app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
+import { InfosComponent } from './infos/infos.component';
+import { AddComponent } from './add/add.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, AddAccountComponent, ItemAccountComponent, HomeAccountComponent, DirectComponent, MsWordComponent, ManageServersComponent, ShortPipe, FilterPipe, RecruterComponent],
-  imports: [BrowserModule, FormsModule],
+  declarations: [
+    AppComponent,
+    FirstComponent,
+    ChildComponent,
+    CvComponent,
+    ListeComponent,
+    ItemComponent,
+    DetailsComponent,
+    AddAccountComponent,
+    ItemAccountComponent,
+    HomeAccountComponent,
+    DirectComponent,
+    MsWordComponent,
+    ManageServersComponent,
+    ShortPipe,
+    FilterPipe,
+    RecruterComponent,
+    HomeComponent,
+    NavbarComponent,
+    InfosComponent,
+    AddComponent,
+    UpdateComponent,
+  ],
+  imports: [BrowserModule, FormsModule, MY_ROUTING],
   providers: [],
   bootstrap: [AppComponent],
 })

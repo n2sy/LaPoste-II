@@ -56,6 +56,7 @@
             <div class="footer">
                 <div class="social-links text-center">
                     <button (click)="addRecrue()" class="btn btn-success">Recruter</button>
+                    <button [routerLink]="[selectedCand._id]" class="btn btn-info">Details</button>
                 </div>
             </div>
         </div> <!-- end back panel -->
