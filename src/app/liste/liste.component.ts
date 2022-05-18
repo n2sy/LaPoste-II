@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ListCandidatsService } from '../list-candidats.service';
 import { Candidat } from '../models/candidat';
 
 @Component({
@@ -7,13 +8,19 @@ import { Candidat } from '../models/candidat';
   styleUrls: ['./liste.component.css'],
 })
 export class ListeComponent implements OnInit {
-  @Input() listCandidats = [];
+  listCandidats = [];
   @Output() sendCandToCv = new EventEmitter<Candidat>();
-  constructor() {}
+  constructor(private candSer: ListCandidatsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.listCandidats = this.candSer.getAllCandidats();
+  }
 
   traitementDeList(cand) {
     this.sendCandToCv.emit(cand);
+  }
+
+  showList() {
+    console.log(this.candSer.getAllCandidats());
   }
 }

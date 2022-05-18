@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListCandidatsService } from '../list-candidats.service';
 import { Candidat } from '../models/candidat';
 
 @Component({
@@ -7,17 +8,24 @@ import { Candidat } from '../models/candidat';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-  tabCandidats = [
-    new Candidat(1, 'Mohamed', 'Jelassi', 38, 'Enseignant', 'nidhal.jpg'),
-    new Candidat(2, 'Bart', 'Simpson', 18, 'Eleve', 'bart.jpeg'),
-    new Candidat(3, 'Homer', 'Simpson', 52, 'Directeur', 'homer.jpg'),
-  ];
+  tabCandidats = [];
   selectedCandidat: Candidat;
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor(private candSer: ListCandidatsService) {}
+
+  ngOnInit(): void {
+    this.tabCandidats = this.candSer.getAllCandidats();
+  }
 
   traitementDuCv(cand) {
     this.selectedCandidat = cand;
+  }
+
+  addCandidat() {
+    this.candSer.addNewCandidat();
+  }
+
+  showList() {
+    console.log(this.candSer.getAllCandidats());
   }
 }
