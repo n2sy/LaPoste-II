@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { ListCandidatsService } from '../list-candidats.service';
 
 @Component({
   selector: 'app-infos',
@@ -7,7 +8,11 @@ import { ActivatedRoute, ParamMap, Params } from '@angular/router';
   styleUrls: ['./infos.component.css'],
 })
 export class InfosComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute) {}
+  cand;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private candSer: ListCandidatsService
+  ) {}
 
   ngOnInit(): void {
     // this.activatedRoute.params.subscribe({
@@ -22,6 +27,7 @@ export class InfosComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
         console.log(p.get('id'));
+        this.cand = this.candSer.getCandidatById(p.get('id'));
       },
     });
   }

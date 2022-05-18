@@ -16,6 +16,10 @@ export class ListCandidatsService {
     return this.listCandidats;
   }
 
+  getCandidatById(id) {
+    return this.listCandidats.find((c) => c._id == id);
+  }
+
   showMessage() {
     alert('Je suis le service !');
   }
