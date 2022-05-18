@@ -1,0 +1,6 @@
+<div *ngIf="listRec.length" class="container">
+    <h4>Liste des recrues</h4>
+    <ol>
+        <app-item *ngFor="let rec of listRec" [oneCandidat]="rec"></app-item>
+    </ol>
+</div>

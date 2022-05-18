@@ -17,9 +17,10 @@ import { MsWordComponent } from './ms-word/ms-word.component';
 import { ManageServersComponent } from './manage-servers/manage-servers.component';
 import { ShortPipe } from './short.pipe';
 import { FilterPipe } from './filter.pipe';
+import { RecruterComponent } from './recruter/recruter.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, AddAccountComponent, ItemAccountComponent, HomeAccountComponent, DirectComponent, MsWordComponent, ManageServersComponent, ShortPipe, FilterPipe],
+  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, AddAccountComponent, ItemAccountComponent, HomeAccountComponent, DirectComponent, MsWordComponent, ManageServersComponent, ShortPipe, FilterPipe, RecruterComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
