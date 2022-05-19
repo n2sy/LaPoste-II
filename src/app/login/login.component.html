@@ -1,0 +1,22 @@
+<form #f="ngForm" (ngSubmit)="showForm(f)">
+    <label for="login">Login</label>
+    <input #log="ngModel" ngModel required email type="text" class="form-control" id="login" name="login">
+    <div *ngIf="log.invalid && log.touched" class="alert alert-danger">Ce champ est obligatoire et est une adresse mail
+    </div>
+    <label for="pwd">Mot de passe</label>
+    <input ngModel type="text" class="form-control" id="pwd" name="password">
+
+    <label for="job">Job :</label>
+    <select [ngModel]="defaultJob" name="job" id="job" class="form-control">
+        <option value=""></option>
+        <option value="ooredoo">Ooredoo</option>
+        <option value="tt">TT</option>
+        <option value="LaPoste">La Poste</option>
+
+    </select>
+    <label for="">Commentaire</label>
+
+    <input [(ngModel)]="commentaire" type="text" class="form-control" name="comment">
+    {{commentaire}}
+    <button class="btn btn-success">Submit</button>
+</form>

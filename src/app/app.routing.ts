@@ -7,6 +7,7 @@ import { InfosComponent } from './infos/infos.component';
 import { MsWordComponent } from './ms-word/ms-word.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 let my_routes: Routes = [
   { path: '', component: HomeComponent },
   {
@@ -20,6 +21,7 @@ let my_routes: Routes = [
   },
   { path: 'accounts', component: HomeAccountComponent },
   { path: 'ms-word', component: MsWordComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];

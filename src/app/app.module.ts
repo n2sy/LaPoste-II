@@ -25,6 +25,7 @@ import { InfosComponent } from './infos/infos.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AddComponent,
     UpdateComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, FormsModule, MY_ROUTING],
   providers: [],
