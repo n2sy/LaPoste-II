@@ -1,4 +1,23 @@
 <form #f="ngForm" (ngSubmit)="showForm(f)">
+    <!-- <div #ident="ngModelGroup" ngModelGroup="indentifiants" name="identifiants">
+        <label for="login">Login</label>
+        <input #log="ngModel" ngModel required email type="text" class="form-control" id="login" name="login">
+
+        <label for="pwd">Mot de passe</label>
+        <input ngModel type="text" class="form-control" id="pwd" name="password">
+    </div>
+    <div *ngIf="ident.invalid && ident.touched" class="alert alert-danger">Erreur de saisie
+    </div> -->
+
+    <input #t="ngModel" ngModel name="test" type="text" required minlength="4" pattern="nidhal" class="form-control">
+    <div *ngIf="t.invalid && t.touched" class="alert alert-danger">
+        <p *ngIf="t.errors['required']">Ce champ est required</p>
+        <p *ngIf="t.errors['minlength']">Le nombre minimal de caractères est 4</p>
+        <p *ngIf="t.errors['pattern']">Le pattern est Nidhal</p>
+    </div>
+
+
+
     <label for="login">Login</label>
     <input #log="ngModel" ngModel required email type="text" class="form-control" id="login" name="login">
     <div *ngIf="log.invalid && log.touched" class="alert alert-danger">Ce champ est obligatoire et est une adresse mail
@@ -18,5 +37,5 @@
 
     <input [(ngModel)]="commentaire" type="text" class="form-control" name="comment">
     {{commentaire}}
-    <button class="btn btn-success">Submit</button>
+    <button [disabled]="f.invalid" class="btn btn-success">Submit</button>
 </form>

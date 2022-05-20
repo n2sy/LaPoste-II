@@ -24,9 +24,18 @@ export class ListCandidatsService {
     alert('Je suis le service !');
   }
 
-  addNewCandidat() {
-    this.listCandidats.push(
-      new Candidat(3, 'New', 'Candidat', 52, 'Directeur', 'homer.jpg')
-    );
+  addCandidat(newC) {
+    newC.id = this.listCandidats[this.listCandidats.length - 1]._id + 1;
+    this.listCandidats.push(newC);
+  }
+
+  deleteCandidat(Cand) {
+    let i = this.listCandidats.indexOf(Cand);
+    this.listCandidats.splice(i, 1);
+  }
+
+  updateCandidat(Cand) {
+    let i = this.listCandidats.indexOf(Cand);
+    this.listCandidats[i] = Cand;
   }
 }
