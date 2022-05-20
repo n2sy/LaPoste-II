@@ -8,13 +8,23 @@ import { Candidat } from '../models/candidat';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-  tabCandidats = [];
+  tabCandidats: any = [];
   selectedCandidat: Candidat;
 
   constructor(private candSer: ListCandidatsService) {}
 
   ngOnInit(): void {
-    this.tabCandidats = this.candSer.getAllCandidats();
+    // this.tabCandidats = this.candSer.getAllCandidats();
+    this.candSer.getAllCandidatsAPI().subscribe({
+      next: (response) => {
+        console.log(response);
+
+        this.tabCandidats = response;
+      },
+      error: (err) => {
+        console.log('Probleme avec getAllCandidats');
+      },
+    });
   }
 
   traitementDuCv(cand) {
@@ -22,7 +32,7 @@ export class CvComponent implements OnInit {
   }
 
   addCandidat() {
-    this.candSer.addNewCandidat();
+    //this.candSer.addNewCandidat();
   }
 
   showList() {

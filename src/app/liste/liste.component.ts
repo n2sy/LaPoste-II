@@ -8,12 +8,12 @@ import { Candidat } from '../models/candidat';
   styleUrls: ['./liste.component.css'],
 })
 export class ListeComponent implements OnInit {
-  listCandidats = [];
+  @Input() listCandidats = [];
   @Output() sendCandToCv = new EventEmitter<Candidat>();
   constructor(private candSer: ListCandidatsService) {}
 
   ngOnInit(): void {
-    this.listCandidats = this.candSer.getAllCandidats();
+    // this.listCandidats = this.candSer.getAllCandidats();
   }
 
   traitementDeList(cand) {

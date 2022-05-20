@@ -25,18 +25,39 @@ export class InfosComponent implements OnInit {
     //let id = this.activatedRoute.snapshot.paramMap.get('id');
     //console.log(id);
 
+    // this.activatedRoute.paramMap.subscribe({
+    //   next: (p: ParamMap) => {
+    //     console.log(p.get('id'));
+    //     this.cand = this.candSer.getCandidatById(p.get('id'));
+    //   },
+    // });
     this.activatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
         console.log(p.get('id'));
-        this.cand = this.candSer.getCandidatById(p.get('id'));
+        this.candSer.getCandidatByIdAPI(p.get('id')).subscribe({
+          next: (response) => {
+            this.cand = response;
+          },
+        });
       },
     });
   }
 
   deleteCandidat() {
+    // if (confirm('Etes-vous sur de vouloir supprimer ce candidat ?')) {
+    //   this.candSer.deleteCandidat(this.cand);
+    //   this.router.navigateByUrl('/cv');
+    // }
     if (confirm('Etes-vous sur de vouloir supprimer ce candidat ?')) {
-      this.candSer.deleteCandidat(this.cand);
-      this.router.navigateByUrl('/cv');
+      this.candSer.deleteCandidatAPI(this.cand).subscribe({
+        next: (response) => {
+          alert(response['message']);
+          this.router.navigateByUrl('/cv');
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
     }
   }
 }

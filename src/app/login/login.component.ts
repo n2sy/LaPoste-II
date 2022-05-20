@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,12 +9,23 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   defaultJob = 'La Poste';
   commentaire = 'bla bla';
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.http.get('https://jsonpjjjlaceholder.typicode.com/users').subscribe({
+    //   next: (response) => {
+    //     console.log(response);
+    //   },
+    //   error: (err) => {
+    //     console.log(err);
+    //   },
+    //   complete: () => {
+    //     console.log('Flux terminé');
+    //   },
+    // });
+  }
 
   showForm(f) {
     console.log(f.value);
   }
-
 }
