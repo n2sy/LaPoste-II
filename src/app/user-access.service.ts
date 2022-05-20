@@ -11,4 +11,16 @@ export class UserAccessService {
   seConnecter(u) {
     return this.http.post(this.link, u);
   }
+
+  estConnecte() {
+    let token = localStorage.getItem('my_token');
+    if (token) {
+      return true;
+    }
+    return false;
+  }
+
+  seDeconnecter() {
+    localStorage.removeItem('my_token');
+  }
 }
