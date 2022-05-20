@@ -8,13 +8,14 @@ import { MsWordComponent } from './ms-word/ms-word.component';
 import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { AllowModifGuard } from './allow-modif.guard';
 let my_routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'cv', //component: CvComponent,
     children: [
       { path: '', component: CvComponent },
-      { path: 'add', component: AddComponent },
+      { path: 'add', component: AddComponent, canActivate: [AllowModifGuard] },
       { path: ':id', component: InfosComponent },
       { path: ':id/edit', component: UpdateComponent },
     ],
