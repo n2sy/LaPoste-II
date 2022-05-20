@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Candidat } from './models/candidat';
 
@@ -38,6 +38,11 @@ export class ListCandidatsService {
     this.listCandidats.push(newC);
   }
   addCandidatAPI(newC) {
+    let token = localStorage.getItem('my_token');
+    if (token) {
+      let p = new HttpParams().set('access_token', token);
+      return this.http.post(this.link, newC, { params: p });
+    }
     return this.http.post(this.link, newC);
   }
 
